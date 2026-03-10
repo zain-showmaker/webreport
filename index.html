@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zain's Galaxy - Calm Version</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: #00050a; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .stars-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+            z-index: -1;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.5;
+            animation: twinkle var(--duration) infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.1); }
+        }
+
+        /* تعديل الاسم ليكون النبض خفيفاً جداً */
+        .name {
+            color: white;
+            font-size: 3.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 12px;
+            text-align: center;
+            z-index: 10;
+            /* زيادة المدة لـ 6 ثوانٍ لجعل الحركة أبطأ وأهدأ */
+            animation: pulseColor 6s ease-in-out infinite;
+        }
+
+        @keyframes pulseColor {
+            0%, 100% { 
+                /* توهج خفيف جداً */
+                text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+                color: #ffffff;
+                transform: scale(1); /* حجم طبيعي */
+            }
+            50% { 
+                /* لون هادئ مع توهج بسيط */
+                text-shadow: 0 0 15px rgba(34, 211, 238, 0.5);
+                color: #d1f7ff; 
+                transform: scale(1.02); /* تكبير غير ملحوظ تقريباً */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="stars-container" id="stars"></div>
+
+    <div class="name">
+        Zain Al-Abidin Hussain
+    </div>
+
+    <script>
+        const container = document.getElementById('stars');
+        for (let i = 0; i < 150; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            const size = Math.random() * 2 + 'px'; /* تصغير حجم النجوم قليلاً للجمالية */
+            star.style.width = size;
+            star.style.height = size;
+            star.style.top = Math.random() * 100 + '%';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.setProperty('--duration', Math.random() * 3 + 3 + 's');
+            container.appendChild(star);
+        }
+    </script>
+
+</body>
+</html>
