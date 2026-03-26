@@ -1,5 +1,5 @@
 #include <iostream>
-using namespace stdك
+using namespace std;
 
 int add(int number1, int number2)
 {
@@ -16,7 +16,7 @@ int subtract (int number1 , int number2)
 return number1 - number2;
 }
 
-int division ( int number1,  int number2)
+float division ( float number1, float nnumber2)
 {
 return number1 / number2;
 } 
@@ -52,7 +52,7 @@ void calculatorApp()
                 break;
          case 3 : result = subtract(n1 ,n2) ;
                 break;
-         case 4 : result = divisio1(n1 ,n2)  ;
+         case 4 : result = division(n1 ,n2)  ;
                 break;
          default :
          cout << "inccorct input"<<endl;
