@@ -21,6 +21,10 @@ float division ( float number1, float number2)
 return number1 / number2;
 } 
 
+int remainder(int number1, int number2)
+{
+    return number1 % number2;
+}
 
 int Getuserinput(int index_sequence)
 {
@@ -42,6 +46,7 @@ void calculatorApp()
      cout<< "2) product."<<endl;
      cout << "3) subtract."<<endl;
      cout << "4) divasion."<<endl;
+    cout << "5) remainder." << endl;
      cin >> selection;
      int result;
      switch (selection)
@@ -54,6 +59,9 @@ void calculatorApp()
                 break;
          case 4 : result = division(n1 ,n2)  ;
                 break;
+         case 5: 
+    result = remainder(n1, n2);
+    break;
          default :
          cout << "inccorct input"<<endl;
      }
